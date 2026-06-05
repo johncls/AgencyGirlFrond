@@ -31,7 +31,7 @@ export function User() {
     });
 
     useEffect(() => {
-        fetch(`${apiUrl}/get-all`)
+        fetch(`${apiUrl}/api/get-all`)
             .then(response => response.json())
             .then(data => setUsers(data))
             .catch(error => setError(error))
@@ -46,7 +46,7 @@ export function User() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(formData);
-        fetch(`${apiUrl}/create`, {
+        fetch(`${apiUrl}/api/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
