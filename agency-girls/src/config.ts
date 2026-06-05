@@ -1,2 +1,2 @@
-// API está en https://agencygirls.cloud con todas las rutas
-export const apiUrl = 'https://agencygirls.cloud'
+// API en el mismo servidor VPS (usa rutas relativas)
+export const apiUrl = ''
