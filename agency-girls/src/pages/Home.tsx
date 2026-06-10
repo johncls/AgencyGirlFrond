@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { apiUrl } from '../config'
 import { Button } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { messageSendServices } from '../services/api/message-services';

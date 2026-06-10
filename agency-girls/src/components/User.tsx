@@ -34,7 +34,6 @@ export function User() {
     });
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(10);
-    const [totalUsers, setTotalUsers] = useState(20);
 
     useEffect(() => {
         setOpen(false);
@@ -50,18 +49,15 @@ export function User() {
             // Esperamos una respuesta con estructura de paginación: { users: [...], total: 100 }
             if (response.users && Array.isArray(response.users)) {
                 setUsers(response.users);
-                setTotalUsers(response.total || 0);
             } else if (Array.isArray(response)) {
                 // Si la respuesta es un array directo
                 setUsers(response);
-                setTotalUsers(response.length);
             } else if (response.data && Array.isArray(response.data)) {
                 setUsers(response.data);
-                setTotalUsers(response.total || response.data.length);
+               
             } else {
                 console.error('Formato de respuesta no reconocido:', response);
                 setUsers([]);
-                setTotalUsers(0);
             }
         } catch (error) {
             console.error('Error fetching users:', error);
@@ -128,7 +124,7 @@ export function User() {
             setAlertMessage(response.message);
             fetchUsers(1, rowsPerPage);
         } catch (error) {
-            setAlertMessage(error.message);
+            setAlertMessage( 'Error al reiniciar el contador');
             setOpen(true);
             fetchUsers(1, rowsPerPage);
         }
