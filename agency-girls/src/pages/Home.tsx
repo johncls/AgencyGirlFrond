@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Button } from '@mui/material'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { messageSendServices } from '../services/api/message-services';
+import girlsLogo from '../assets/girls.png';
+
 export function Home() {
   const [loading, setLoading] = useState(false)
 
@@ -28,7 +30,7 @@ export function Home() {
   return (
     <section id="center">
       <div>
-        <img src="/src/assets/girls.png" alt="Czech Girls Agency" style={{ width: '30%', height: '30%', margin: '0 auto' }} />
+        <img src={girlsLogo} alt="Czech Girls Agency" style={{ width: '30%', height: '30%', margin: '0 auto' }} />
         <br />
         <h1>🌟 ¡Bienvenida a Czech Girls Agency! 🌟</h1>
         <p style={{ textAlign: 'center',  alignContent: 'center', margin: '0 auto', width: '50%' }}>
